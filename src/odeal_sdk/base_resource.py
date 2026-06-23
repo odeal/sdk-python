@@ -39,7 +39,7 @@ class BaseResource:
         config: SDK yapılandırma ayarları.
     """
     
-    AGENT = "OdealSdkPythonClient/0.1.0"
+    AGENT = "OdealSdkPythonClient/0.1.1"
     
     def __init__(self, config: OdealConfig):
         """
