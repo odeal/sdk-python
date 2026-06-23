@@ -1,4 +1,4 @@
-__version__ = "2.17.8"
+__version__ = "2.18.2"
 from .odeal_config import OdealConfig
 from .odeal_config_builder import OdealConfigBuilder
 from .odeal_environment import OdealEnvironment

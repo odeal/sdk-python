@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='odeal-sdk',
-    version='2.17.8',
+    version='2.18.2',
     description='Odeal Entegrasyon SDK (Otomatik Üretildi)',
     author='Odeal',
     author_email='',
