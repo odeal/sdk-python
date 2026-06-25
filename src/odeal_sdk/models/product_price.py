@@ -29,10 +29,7 @@ class ProductPrice:
     def from_dict(cls, data: Dict[str, Any]) -> Optional['ProductPrice']:
         if not data:
             return None
-        # Nested Type: double
-        from .double import double
-        gross_price_data = data.get("grossPrice")
-        gross_price = deserialize(gross_price_data, double)
+        gross_price = data.get("grossPrice")
         vat_ratio = data.get("vatRatio")
         sct_ratio = data.get("sctRatio")
 

@@ -23,7 +23,7 @@ class ApiError:
     """Hatanin olustu zaman."""
     path: Optional[str] = None
     """Hatanin olustugu endpoint."""
-    validation_errors: Optional[List['ValidationError']] = None
+    validation_errors: List['ValidationError'] = field(default_factory=list)
     """Validasyon hatalari (400 icin)."""
 
     def to_dict(self) -> Dict[str, Any]:
@@ -41,7 +41,7 @@ class ApiError:
         # Nested Type: ValidationError
         from .validation_error import ValidationError
         validation_errors_data = data.get("validationErrors")
-        validation_errors = [deserialize(item, ValidationError) for item in validation_errors_data] if validation_errors_data else None
+        validation_errors = [deserialize(item, ValidationError) for item in validation_errors_data] if validation_errors_data else []
 
         return cls(
             code=code,

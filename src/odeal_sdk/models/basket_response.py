@@ -13,8 +13,8 @@ class BasketResponse:
     
     _validation_rules = {
     }
-    result: Optional[Any] = None
-    """"""
+    result: Optional['BasketCreateResult'] = None
+    """Oluşturulan sepetin sonucu."""
 
     def to_dict(self) -> Dict[str, Any]:
         return object_to_dict(self)
@@ -23,7 +23,10 @@ class BasketResponse:
     def from_dict(cls, data: Dict[str, Any]) -> Optional['BasketResponse']:
         if not data:
             return None
-        result = data.get("result")
+        # Nested Type: BasketCreateResult
+        from .basket_create_result import BasketCreateResult
+        result_data = data.get("result")
+        result = deserialize(result_data, BasketCreateResult)
 
         return cls(
             result=result,

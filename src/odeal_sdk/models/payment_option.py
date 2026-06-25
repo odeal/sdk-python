@@ -29,10 +29,7 @@ class PaymentOption:
     def from_dict(cls, data: Dict[str, Any]) -> Optional['PaymentOption']:
         if not data:
             return None
-        # Nested Type: double
-        from .double import double
-        amount_data = data.get("amount")
-        amount = deserialize(amount_data, double)
+        amount = data.get("amount")
         # Nested Type: PaymentOptionType
         from ..enums.payment_option_type import PaymentOptionType
         type_raw = data.get("type")

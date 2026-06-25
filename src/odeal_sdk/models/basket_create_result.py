@@ -3,30 +3,28 @@ from typing import Any, Dict, List, Optional, Union
 from ..utils import object_to_dict, deserialize
 
 @dataclass
-class BasketPrice:
+class BasketCreateResult:
     """
-    
+    Oluşturulan sepetin sonucu.
     """
     
     _config_map = {
     }
     
     _validation_rules = {
-        "gross_price": {"required": True,
-        },
     }
-    gross_price: Optional[float] = None
-    """"""
+    id: Optional[int] = None
+    """Oluşturulan sepetin kimliği."""
 
     def to_dict(self) -> Dict[str, Any]:
         return object_to_dict(self)
 
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> Optional['BasketPrice']:
+    def from_dict(cls, data: Dict[str, Any]) -> Optional['BasketCreateResult']:
         if not data:
             return None
-        gross_price = data.get("grossPrice")
+        id = data.get("id")
 
         return cls(
-            gross_price=gross_price,
+            id=id,
         )

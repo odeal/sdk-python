@@ -38,9 +38,9 @@ class BasketRequest:
     """"""
     price: Optional['BasketPrice'] = None
     """"""
-    items: Optional[List['Item']] = None
+    items: List['Item'] = field(default_factory=list)
     """Zorunlu."""
-    payment_options: Optional[List['PaymentOption']] = None
+    payment_options: List['PaymentOption'] = field(default_factory=list)
     """Zorunlu. Ödeme yöntemleri."""
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +71,11 @@ class BasketRequest:
         # Nested Type: Item
         from .item import Item
         items_data = data.get("items")
-        items = [deserialize(item, Item) for item in items_data] if items_data else None
+        items = [deserialize(item, Item) for item in items_data] if items_data else []
         # Nested Type: PaymentOption
         from .payment_option import PaymentOption
         payment_options_data = data.get("paymentOptions")
-        payment_options = [deserialize(item, PaymentOption) for item in payment_options_data] if payment_options_data else None
+        payment_options = [deserialize(item, PaymentOption) for item in payment_options_data] if payment_options_data else []
 
         return cls(
             reference_code=reference_code,

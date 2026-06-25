@@ -13,6 +13,9 @@ from .payment_option import PaymentOption
 from .configuration_request import ConfigurationRequest
 from .unit import Unit
 from .transaction_report import TransactionReport
+from .basket_create_result import BasketCreateResult
+from .basket_summary import BasketSummary
+from .basket_list_result import BasketListResult
 from .basket_response import BasketResponse
 from .basket_list_response import BasketListResponse
 from .cancel_payment_request import CancelPaymentRequest
