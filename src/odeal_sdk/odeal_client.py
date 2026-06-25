@@ -43,6 +43,7 @@ from .models import (
     BasketResponse,
     BasketListResponse,
     CancelPaymentRequest,
+    CancelPaymentResult,
     CancelPaymentResponse,
     ErrorResponse,
     ApiError,

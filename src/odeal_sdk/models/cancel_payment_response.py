@@ -13,8 +13,8 @@ class CancelPaymentResponse:
     
     _validation_rules = {
     }
-    result: Optional[Any] = None
-    """"""
+    result: Optional['CancelPaymentResult'] = None
+    """Ödeme iptal sonucu."""
 
     def to_dict(self) -> Dict[str, Any]:
         return object_to_dict(self)
@@ -23,7 +23,10 @@ class CancelPaymentResponse:
     def from_dict(cls, data: Dict[str, Any]) -> Optional['CancelPaymentResponse']:
         if not data:
             return None
-        result = data.get("result")
+        # Nested Type: CancelPaymentResult
+        from .cancel_payment_result import CancelPaymentResult
+        result_data = data.get("result")
+        result = deserialize(result_data, CancelPaymentResult)
 
         return cls(
             result=result,

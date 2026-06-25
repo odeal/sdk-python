@@ -19,6 +19,7 @@ from .basket_list_result import BasketListResult
 from .basket_response import BasketResponse
 from .basket_list_response import BasketListResponse
 from .cancel_payment_request import CancelPaymentRequest
+from .cancel_payment_result import CancelPaymentResult
 from .cancel_payment_response import CancelPaymentResponse
 from .error_response import ErrorResponse
 from .api_error import ApiError
