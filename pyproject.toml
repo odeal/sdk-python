@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "odeal-sdk"
-version = "0.1.5"
+version = "0.1.6"
 description = "Odeal Entegrasyon SDK (Otomatik Üretildi)"
 readme = "README.md"
 license = { text = "MIT" }
@@ -12,12 +12,29 @@ requires-python = ">=3.8"
 authors = [
     { name = "Odeal" }
 ]
+keywords = ["odeal", "sdk", "payment", "api", "integration"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "requests>=2.31.0",
 ]
 
 [project.urls]
 "Homepage" = "https://github.com/odeal/sdk"
+"Repository" = "https://github.com/odeal/sdk"
+"Documentation" = "https://github.com/odeal/sdk"
+"Bug Tracker" = "https://github.com/odeal/sdk/issues"
 
 [tool.setuptools]
 license-files = ["LICENSE"]
